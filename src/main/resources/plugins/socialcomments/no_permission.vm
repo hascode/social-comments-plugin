@@ -1,0 +1,16 @@
+<html>
+        <head>
+                <meta name="decorator" content="atl.admin"/>
+                <title>$action.getText("toppages.msg.no-permission")</title>
+        </head>
+        <body>
+                <h1>$action.getText("toppages.msg.no-permission")</h1>
+                <div class="toppages-content">
+                	$action.getText("toppages.msg.no-permission.description")
+                	<br/>
+                	<div class="toppages-info">
+                		<small><a href="http://www.hascode.com">by hasCode.com</a></small>
+                	</div>
+                </div>
+        </body>
+</html>

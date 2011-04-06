@@ -1,0 +1,64 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}"
+	pluginsVersion="2">
+	<resource type="i18n" name="i18n"
+		location="com.hascode.confluence.plugin.socialcomments.messages" />
+	<plugin-info>
+		<description>${project.description}</description>
+		<version>${project.version}</version>
+		<vendor name="${project.organization.name}" url="${project.organization.url}" />
+		<param name="configure.url">$req.getContextPath()/plugins/socialcomments/configure.action</param>
+	</plugin-info>
+
+	<!-- COMPONENTS -->
+	<component key="socialCommentEventListener"
+		i18n-name-key="socialcomments.component.component.commenteventlistener"
+		class="com.hascode.confluence.plugin.socialcomments.event.CommentEventListenerImpl">
+		<interface>com.hascode.confluence.plugin.socialcomments.event.CommentEventListener
+		</interface>
+	</component>
+	<component key="recipientExtractorService"
+		i18n-name-key="socialcomments.component.component.recipientextractor"
+		class="com.hascode.confluence.plugin.socialcomments.service.RecipientExtractorServiceImpl">
+		<interface>com.hascode.confluence.plugin.socialcomments.service.RecipientExtractorService
+		</interface>
+	</component>
+	<component key="socialNotificationService"
+		i18n-name-key="socialcomments.component.component.notificationservice"
+		class="com.hascode.confluence.plugin.socialcomments.service.SocialNotificationServiceImpl">
+		<interface>com.hascode.confluence.plugin.socialcomments.service.SocialNotificationService
+		</interface>
+	</component>
+	<component key="socialCommentsConfigurationService"
+		i18n-name-key="socialcomments.component.component.configservice"
+		class="com.hascode.confluence.plugin.socialcomments.persistence.SocialCommentsConfigurationServiceImpl">
+		<interface>com.hascode.confluence.plugin.socialcomments.persistence.SocialCommentsConfigurationService
+		</interface>
+	</component>
+	<!-- /COMPONENTS -->
+
+	<!-- XWORK ACTIONS -->
+	<xwork key="socialcomments.component.xwork.configmanager"
+		i18n-name-key="socialcomments.component.xwork.configmanager">
+		<package name="socialcommentsConfig" extends="default"
+			namespace="/plugins/socialcomments">
+			<default-interceptor-ref name="defaultStack" />
+			<action name="configure"
+				class="com.hascode.confluence.plugin.socialcomments.action.ConfigureAction">
+				<result name="ok" type="velocity">configuration.vm</result>
+				<result name="no-permission" type="velocity">no_permission.vm
+				</result>
+			</action>
+		</package>
+	</xwork>
+	<!-- /XWORK ACTIONS -->
+
+	<!-- WEB ITEMS -->
+	<web-item key="socialcomments.component.webitem.configurelink"
+		i18n-name-key="socialcomments.component.webitem.configurelink" section="system.admin/administration"
+		weight="200">
+		<label key="socialcomments.component.webitem.configurelink.label" />
+		<link>$req.getContextPath()/plugins/socialcomments/configure.action</link>
+	</web-item>
+	<!-- /WEB ITEMS -->
+
+</atlassian-plugin>

@@ -1,0 +1,63 @@
+<html>
+        <head>
+                <meta name="decorator" content="atl.admin"/>
+                <title>$action.getText("socialcomments.msg.configuration")</title>
+        </head>
+        <body>
+			<style type="text/css">
+			.socialcomments-content {
+			    border: 1px solid rgb(221, 221, 221);
+			    -moz-border-radius: 15px 15px 15px 15px;
+			    padding: 20px;
+			}
+			</style>
+        
+                <h1>$action.getText("socialcomments.msg.configuration")</h1>
+                <div class="socialcomments-content">
+                	#parse("/template/includes/actionerrors.vm")
+                	<div class="socialcomments-config">
+                		<form action="$req.getContextPath()/plugins/socialcomments/configure.action" method="post">
+                			<input type="hidden" name="action" value="save"/>
+	                		<table>
+	                			<tbody>
+	                				<tr>
+	                					<th>$action.getText("socialcomments.msg.subject")</th>
+	                					<td>
+	                						<input type="text" name="subject" value="$!socialCommentConfig.getEmailSubject()"/><br/>
+	                						<small>$action.getText("socialcomments.msg.subject.example")</small>
+	                					</td>
+	                				</tr>
+	                				<tr>
+	                					<th>$action.getText("socialcomments.msg.notification")</th>
+	                					<td>
+	                						<textarea name="notification">$!socialCommentConfig.getNotificationText()</textarea><br/>
+	                						<small>$action.getText("socialcomments.msg.notification.hint")</small><br/>
+	                						<small>$action.getText("socialcomments.msg.notification.example")</small>
+	                					</td>
+	                				</tr>
+	                				<tr>
+	                					<th>$action.getText("socialcomments.msg.from.email")</th>
+	                					<td>
+	                						<input type="text" name="from" value="$!socialCommentConfig.getFromEmail()"/><br/>
+	                						<small>$action.getText("socialcomments.msg.from.email.example")</small>
+	                					</td>
+	                				</tr>
+	                				<tr>
+	                					<td colspan="2">
+	                						<input type="submit" value="$action.getText("socialcomments.msg.submit")"/>
+	                					</td>
+	                				</tr>
+	                			</tbody>
+	                		</table>
+                		</form>
+                	</div>
+                	<hr/>
+                	<div class="socialcomments-info">
+                		<small>
+                			<a href="http://www.hascode.com">by hasCode.com</a><br/>
+                			<a href="http://app.hascode.com/social-comments-plugin">Visit the plugin homepage</a>
+                		</small>
+                	</div>
+                </div>
+        </body>
+</html>
