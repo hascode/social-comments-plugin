@@ -1,0 +1,15 @@
+Frequently Asked Questions
+
+* I don't receive any notification
+
+  First of all your configuration should be complete and validated - please check this first in the administration area. Second you need a mail server configured in your confluence instance. At last please check if you have used the correct syntax and type the username correctly .. e.g.: @admin:
+  
+  It is important not to forget the colon after the username and the @ before the username.    
+
+* How to enable Logging?
+
+  Go to your Confluence administration area > Logging & Profiling and add "com.hascode" and the desired log level to the entries. Having done this take a look at your log files.
+
+* I don't like this plugin - isn't there any other?
+  
+  Perhaps the shiny new build-in sharing function in Confluence 3.5 matches your needs

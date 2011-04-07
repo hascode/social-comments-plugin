@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="Social Comments Plugin">
+  <body>
+    <links>
+      <item name="Home" href="/" />
+    </links>
+
+    <menu name="Social Comments Plugin">
+      <item name="Introduction" href="index.html"/>
+      <item name="API" href="apidocs/index.html"/>
+      <item name="Download" href="download.html"/>
+      <item name="Screenshots" href="screenshots.html"/>
+      <item name="FAQs" href="faq.html" />
+    </menu>
+
+    <menu ref="reports"/>
+
+  </body>
+</project>

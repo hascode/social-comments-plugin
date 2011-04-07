@@ -1,0 +1,24 @@
+Introduction
+
+* About
+
+  The Social Comments Plugin allows you to notify users by posting @username: somewhere in a comment in your Confluence wiki.
+  
+  In the administration area you're able to configure the e-mail notification settings and the template for the notifications sent using placeholders.
+
+* Template Configuration
+
+  Currently there are two placeholders you may use in the template:
+  
+  #name# This placeholder displays the Confluence user's full name
+  
+  #url# This placeholder displays the absolute url to the specific Confluence comment
+  
+* Roadmap
+
+  Make the regular expression for extracting a user name from the comment configurable in the admin area
+  
+  Add a configuration to restrict this function to specific spaces/exclude specific spaces
+  
+  
+    
