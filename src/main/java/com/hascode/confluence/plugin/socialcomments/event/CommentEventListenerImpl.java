@@ -63,7 +63,7 @@ public class CommentEventListenerImpl implements CommentEventListener {
 				socialNotificationService.notifyUser(user, comment);
 			}
 		} catch (final Exception e) {
-			logger.error("handling social comment failed!", e);
+			logger.warn("handling social comment failed!", e);
 		}
 	}
 	/*

@@ -10,6 +10,10 @@
 			    -moz-border-radius: 15px 15px 15px 15px;
 			    padding: 20px;
 			}
+			#socialcomments-notification {
+				height:150px;
+				width:400px;
+			}
 			</style>
         
                 <h1>$action.getText("socialcomments.msg.configuration")</h1>
@@ -30,7 +34,7 @@
 	                				<tr>
 	                					<th>$action.getText("socialcomments.msg.notification")</th>
 	                					<td>
-	                						<textarea name="notification">$!socialCommentConfig.getNotificationText()</textarea><br/>
+	                						<textarea name="notification" id="socialcomments-notification">$!socialCommentConfig.getNotificationText()</textarea><br/>
 	                						<small>$action.getText("socialcomments.msg.notification.hint")</small><br/>
 	                						<small>$action.getText("socialcomments.msg.notification.example")</small>
 	                					</td>

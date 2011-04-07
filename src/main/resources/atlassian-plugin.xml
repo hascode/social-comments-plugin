@@ -6,7 +6,7 @@
 		<description>${project.description}</description>
 		<version>${project.version}</version>
 		<vendor name="${project.organization.name}" url="${project.organization.url}" />
-		<param name="configure.url">$req.getContextPath()/plugins/socialcomments/configure.action</param>
+		<param name="configure.url">/plugins/socialcomments/configure.action</param>
 	</plugin-info>
 
 	<!-- COMPONENTS -->

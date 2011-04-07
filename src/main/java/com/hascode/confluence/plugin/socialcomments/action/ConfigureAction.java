@@ -69,6 +69,11 @@ public class ConfigureAction extends AbstractSpaceAction implements ActionOutcom
 					addActionError(error.getMessage());
 				}
 			}
+		} else {
+			final Set<ConstraintViolation<SocialCommentsConfiguration>> errors = configurationService.validate(config);
+			for (final ConstraintViolation<SocialCommentsConfiguration> error : errors) {
+				addActionError(error.getMessage());
+			}
 		}
 
 		return OK;

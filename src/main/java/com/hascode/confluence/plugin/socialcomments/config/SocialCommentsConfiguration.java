@@ -10,7 +10,7 @@ public class SocialCommentsConfiguration implements Serializable {
 	private static final long	serialVersionUID	= 1L;
 
 	@NotNull(message = "{com.hascode.socialcomments.validation.from.invalid}")
-	@Pattern(regexp = "^.+@.+\\..+ $", message = "{com.hascode.socialcomments.validation.from.invalid}")
+	@Pattern(regexp = "^.+@.+\\..+$", message = "{com.hascode.socialcomments.validation.from.invalid}")
 	private String				fromEmail;
 
 	@NotNull(message = "{com.hascode.socialcomments.validation.notification.invalid}")

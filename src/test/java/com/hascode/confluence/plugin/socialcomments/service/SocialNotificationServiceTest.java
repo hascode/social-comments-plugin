@@ -17,21 +17,25 @@ import com.atlassian.confluence.pages.Comment;
 import com.atlassian.confluence.setup.settings.Settings;
 import com.atlassian.confluence.setup.settings.SettingsManager;
 import com.atlassian.user.User;
+import com.hascode.confluence.plugin.socialcomments.persistence.SocialCommentsConfigurationService;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(ConfluenceMailQueueItem.class)
 public class SocialNotificationServiceTest {
 	@Mock
-	private SettingsManager	settingsManager;
+	private SettingsManager						settingsManager;
 
 	@Mock
-	private User			user;
+	private User								user;
 
 	@Mock
-	private Comment			comment;
+	private Comment								comment;
 
 	@Mock
-	private Settings		settings;
+	private Settings							settings;
+
+	@Mock
+	private SocialCommentsConfigurationService	configService;
 
 	@Before
 	public void setUp() {
@@ -50,7 +54,7 @@ public class SocialNotificationServiceTest {
 		PowerMockito.mock(ConfluenceMailQueueItem.class);
 
 		// init
-		final SocialNotificationService service = new SocialNotificationServiceImpl(settingsManager);
+		final SocialNotificationService service = new SocialNotificationServiceImpl(settingsManager, configService);
 
 		// test
 		service.notifyUser(user, comment);

@@ -4,13 +4,13 @@
 	<parent>
 		<groupId>com.atlassian.confluence.plugin.base</groupId>
 		<artifactId>confluence-plugin-base</artifactId>
-		<version>25</version>
+		<version>26</version>
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.hascode.confluence.plugin</groupId>
 	<artifactId>social-comments-plugin</artifactId>
-	<version>0.9.1</version>
+	<version>0.9.5</version>
 	<name>Confluence Social Comments Plugin</name>
 	<description>Allows you to notify Confluence users by typing @username: in a comment</description>
 	<packaging>atlassian-plugin</packaging>
@@ -114,11 +114,13 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>1.6.1</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.6.1</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
