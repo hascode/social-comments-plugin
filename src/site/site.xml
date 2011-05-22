@@ -11,6 +11,7 @@
       <item name="Download" href="download.html"/>
       <item name="Screenshots" href="screenshots.html"/>
       <item name="FAQs" href="faq.html" />
+      <item name="Releases" href="releases.html" />
     </menu>
 
     <menu ref="reports"/>

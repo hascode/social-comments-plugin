@@ -76,10 +76,12 @@ public class SocialNotificationServiceImpl implements SocialNotificationService 
 		final SocialCommentsConfiguration config = configService.load();
 		final String url = settingsManager.getGlobalSettings().getBaseUrl() + comment.getUrlPath();
 		final String userName = user.getFullName();
+		final String content = comment.getContent();
 
 		String body = config.getNotificationText();
 		body = body.replaceAll("#name#", userName);
 		body = body.replaceAll("#url#", url);
+		body = body.replaceAll("#content#", content);
 		return body;
 	}
 
