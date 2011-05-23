@@ -1,0 +1,22 @@
+Releases
+
+* 0.9.6 Feature Enhancements (22 May 2011)
+
+	* {{{https://bitbucket.org/hascode/social-comments-plugin/issue/10/include-the-content-of-the-comment-in-the}#10 Include the content of the comment in the email notification}}
+	
+	* {{{https://bitbucket.org/hascode/social-comments-plugin/issue/11/refactor-the-notification-template}#11 Refactor the notification template creation process}}
+	
+	* {{{https://bitbucket.org/hascode/social-comments-plugin/issue/12/add-placeholder-for-the-comments-creator}#12 Add placeholder for the comment's creator}}
+	
+    
+    
+* 0.9.5 Initial Release (07 Apr 2011)
+
+	* User extraction and notification from Confluence comments
+	
+	* Configurable notification e-mail settings (subject, sender, e-mail template)
+	
+	* Placeholder support for the e-mail template (notified user's name, comment url)
+	
+	* Active config validation, no notification is send if the configuration is not valid
+ 

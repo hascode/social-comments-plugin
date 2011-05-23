@@ -34,6 +34,12 @@
 		<interface>com.hascode.confluence.plugin.socialcomments.persistence.SocialCommentsConfigurationService
 		</interface>
 	</component>
+	<component key="socialCommentsTemplateCreator"
+		i18n-name-key="socialcomments.component.component.templatecreator"
+		class="com.hascode.confluence.plugin.socialcomments.service.SocialNotificationTemplateCreatorImpl">
+		<interface>com.hascode.confluence.plugin.socialcomments.service.SocialNotificationTemplateCreator
+		</interface>
+	</component>
 	<!-- /COMPONENTS -->
 
 	<!-- XWORK ACTIONS -->
@@ -54,10 +60,11 @@
 
 	<!-- WEB ITEMS -->
 	<web-item key="socialcomments.component.webitem.configurelink"
-		i18n-name-key="socialcomments.component.webitem.configurelink" section="system.admin/administration"
-		weight="200">
+		i18n-name-key="socialcomments.component.webitem.configurelink"
+		section="system.admin/administration" weight="200">
 		<label key="socialcomments.component.webitem.configurelink.label" />
-		<link>$req.getContextPath()/plugins/socialcomments/configure.action</link>
+		<link>$req.getContextPath()/plugins/socialcomments/configure.action
+		</link>
 	</web-item>
 	<!-- /WEB ITEMS -->
 

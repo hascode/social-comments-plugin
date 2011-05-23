@@ -1,5 +1,8 @@
 package com.hascode.confluence.plugin.socialcomments.service;
 
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import org.junit.Before;
@@ -37,6 +40,9 @@ public class SocialNotificationServiceTest {
 	@Mock
 	private SocialCommentsConfigurationService	configService;
 
+	@Mock
+	private SocialNotificationTemplateCreator	templateCreator;
+
 	@Before
 	public void setUp() {
 		MockitoAnnotations.initMocks(this);
@@ -47,6 +53,7 @@ public class SocialNotificationServiceTest {
 	public void testNotifyUser() {
 		// stub
 		when(comment.getUrlPath()).thenReturn("/somecommentulrstring");
+		when(comment.getContent()).thenReturn("This is a test comment");
 		when(user.getFullName()).thenReturn("I R admin");
 		when(user.getEmail()).thenReturn("tester@hascode.com");
 		when(settingsManager.getGlobalSettings()).thenReturn(settings);
@@ -54,11 +61,12 @@ public class SocialNotificationServiceTest {
 		PowerMockito.mock(ConfluenceMailQueueItem.class);
 
 		// init
-		final SocialNotificationService service = new SocialNotificationServiceImpl(settingsManager, configService);
+		final SocialNotificationService service = new SocialNotificationServiceImpl(settingsManager, configService, templateCreator);
 
 		// test
 		service.notifyUser(user, comment);
 
 		// spy
+		verify(templateCreator.generateBody(any(User.class), any(Comment.class)), times(1));
 	}
 }

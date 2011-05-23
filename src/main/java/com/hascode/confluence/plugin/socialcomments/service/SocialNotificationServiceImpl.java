@@ -31,9 +31,15 @@ public class SocialNotificationServiceImpl implements SocialNotificationService 
 	 */
 	private final SocialCommentsConfigurationService	configService;
 
-	public SocialNotificationServiceImpl(final SettingsManager settingsManager, final SocialCommentsConfigurationService configService) {
+	/**
+	 * the template creator
+	 */
+	private final SocialNotificationTemplateCreator		templateCreator;
+
+	public SocialNotificationServiceImpl(final SettingsManager settingsManager, final SocialCommentsConfigurationService configService, final SocialNotificationTemplateCreator templateCreator) {
 		this.settingsManager = settingsManager;
 		this.configService = configService;
+		this.templateCreator = templateCreator;
 	}
 
 	/*
@@ -52,6 +58,11 @@ public class SocialNotificationServiceImpl implements SocialNotificationService 
 		}
 
 		final String body = generateMailBody(user, comment);
+		if (body == null) {
+			logger.warn("e-mail body empty .. skipping here ..");
+			return;
+		}
+
 		final ConfluenceMailQueueItem mailItem = new ConfluenceMailQueueItem(user.getEmail(), config.getEmailSubject(), body, MIME_TYPE);
 		mailItem.setFromName(config.getFromEmail());
 		logger.debug("trying to send mail: " + mailItem.toString());
@@ -73,16 +84,6 @@ public class SocialNotificationServiceImpl implements SocialNotificationService 
 	 * @return the generated mail body
 	 */
 	private String generateMailBody(final User user, final Comment comment) {
-		final SocialCommentsConfiguration config = configService.load();
-		final String url = settingsManager.getGlobalSettings().getBaseUrl() + comment.getUrlPath();
-		final String userName = user.getFullName();
-		final String content = comment.getContent();
-
-		String body = config.getNotificationText();
-		body = body.replaceAll("#name#", userName);
-		body = body.replaceAll("#url#", url);
-		body = body.replaceAll("#content#", content);
-		return body;
+		return templateCreator.generateBody(user, comment);
 	}
-
 }

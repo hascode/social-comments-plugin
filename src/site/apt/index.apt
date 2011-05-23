@@ -16,9 +16,6 @@ Introduction
   
 * Roadmap
 
-  Make the regular expression for extracting a user name from the comment configurable in the admin area
-  
-  Add a configuration to restrict this function to specific spaces/exclude specific spaces
-  
+  Take a look at the current issues at {{{https://bitbucket.org/hascode/social-comments-plugin/issues}Bitbucket.org}}. Past releases are listed {{{/releases.html}here}}.  
   
     
