@@ -1,16 +1,31 @@
 <html>
         <head>
                 <meta name="decorator" content="atl.admin"/>
-                <title>$action.getText("toppages.msg.no-permission")</title>
+                <title>$action.getText("socialcomments.msg.no-permission")</title>
         </head>
         <body>
-                <h1>$action.getText("toppages.msg.no-permission")</h1>
-                <div class="toppages-content">
-                	$action.getText("toppages.msg.no-permission.description")
-                	<br/>
-                	<div class="toppages-info">
-                		<small><a href="http://www.hascode.com">by hasCode.com</a></small>
-                	</div>
-                </div>
+        	<style type="text/css">
+			.socialcomments-content {
+			    border: 1px solid rgb(221, 221, 221);
+			    -moz-border-radius: 15px 15px 15px 15px;
+			    padding: 20px;
+			}
+			#socialcomments-notification {
+				height:150px;
+				width:400px;
+			}
+			</style>
+            <h1>$action.getText("socialcomments.msg.no-permission")</h1>
+            <div class="socialcomments-content">
+            	$action.getText("socialcomments.msg.no-permission.description")
+            	<br/>
+    			<hr/>
+            	<div class="socialcomments-info">
+            		<small>
+            			<a href="http://www.hascode.com">by hasCode.com</a><br/>
+            			<a href="http://app.hascode.com/social-comments-plugin">Visit the plugin homepage</a>
+            		</small>
+            	</div>
+            </div>
         </body>
 </html>

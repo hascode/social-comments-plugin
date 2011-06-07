@@ -4,7 +4,9 @@ import java.util.Map;
 
 import com.atlassian.confluence.renderer.radeox.macros.MacroUtils;
 import com.atlassian.confluence.user.AuthenticatedUserThreadLocal;
+import com.atlassian.confluence.user.UserAccessor;
 import com.atlassian.confluence.util.velocity.VelocityUtils;
+import com.atlassian.spring.container.ContainerManager;
 import com.atlassian.user.User;
 import com.opensymphony.webwork.ServletActionContext;
 
@@ -12,10 +14,12 @@ import com.opensymphony.webwork.ServletActionContext;
  * utility class
  */
 public class Util {
+	private UserAccessor	userAccessor;
+
 	/**
 	 * returns whether the current user is logged in or not
 	 * 
-	 * @return
+	 * @return login state
 	 */
 	public boolean userLoggedin() {
 		return (AuthenticatedUserThreadLocal.getUser() != null);
@@ -24,19 +28,11 @@ public class Util {
 	/**
 	 * returns whether the current user has the administrator role
 	 * 
-	 * @return
+	 * @return role check result
 	 */
 	public boolean userIsAdmin() {
-		// User user = AuthenticatedUserThreadLocal.getUser();
-		// Group group =
-		// userAccessor.getGroup(PluginConfig.getAdminGroupName());
-		// if (user != null && group != null) {
-		// if (userAccessor.hasMembership(group, user)) {
-		// return true;
-		// }
-		// }
-
-		return true;
+		final User user = AuthenticatedUserThreadLocal.getUser();
+		return getUserAccessor().isSuperUser(user);
 	}
 
 	/**
@@ -79,5 +75,12 @@ public class Util {
 	 */
 	public String getVelocityRenderedTemplate(final String macroTemplate, final Map<String, Object> context) {
 		return VelocityUtils.getRenderedTemplate(macroTemplate, context);
+	}
+
+	private UserAccessor getUserAccessor() {
+		if (userAccessor == null) {
+			userAccessor = (UserAccessor) ContainerManager.getComponent("userAccessor");
+		}
+		return userAccessor;
 	}
 }

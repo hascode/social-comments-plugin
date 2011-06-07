@@ -1,12 +1,14 @@
 Releases
 
-* 0.9.6 Feature Enhancements (22 May 2011)
+* 0.9.6 Feature Enhancements (07 Jun 2011)
 
 	* {{{https://bitbucket.org/hascode/social-comments-plugin/issue/10/include-the-content-of-the-comment-in-the}#10 Include the content of the comment in the email notification}}
 	
 	* {{{https://bitbucket.org/hascode/social-comments-plugin/issue/11/refactor-the-notification-template}#11 Refactor the notification template creation process}}
 	
 	* {{{https://bitbucket.org/hascode/social-comments-plugin/issue/12/add-placeholder-for-the-comments-creator}#12 Add placeholder for the comment's creator}}
+	
+	* {{{https://bitbucket.org/hascode/social-comments-plugin/issue/13/fix-security-restrictions-for}#13 Fix security restrictions for configuration interface}}
 	
     
     

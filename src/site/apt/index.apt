@@ -4,7 +4,7 @@ Introduction
 
   The Social Comments Plugin allows you to notify users by posting @username: somewhere in a comment in your Confluence wiki.
   
-  In the administration area you're able to configure the e-mail notification settings and the template for the notifications sent using placeholders.
+  In the administration area you're able to configure the e-mail notification settings and the template for the notifications sent using placeholders (you need to be super admin).
 
 * Template Configuration
 
@@ -14,8 +14,12 @@ Introduction
   
   #url# This placeholder displays the absolute url to the specific Confluence comment
   
+  #content# This placeholder displays the comment's content
+  
+  #creator# This placeholder displays the comment creator's name
+  
 * Roadmap
 
-  Take a look at the current issues at {{{https://bitbucket.org/hascode/social-comments-plugin/issues}Bitbucket.org}}. Past releases are listed {{{/releases.html}here}}.  
+  Take a look at the current issues at {{{https://bitbucket.org/hascode/social-comments-plugin/issues}Bitbucket.org}}. Past releases are listed {{{./releases.html}here}}.  
   
     
