@@ -1,5 +1,12 @@
 Releases
 
+* 0.9.7 Feature Enhancements (28 Jul 2011)
+
+	* {{{https://bitbucket.org/hascode/social-comments-plugin/issue/14/ensure-compatability-with-confluence-359}#14 Ensure compatability with Confluence 3.5.9}}
+	
+	* {{{https://bitbucket.org/hascode/social-comments-plugin/issue/15/update-documentation}#15 Update documentation}}
+
+
 * 0.9.6 Feature Enhancements (07 Jun 2011)
 
 	* {{{https://bitbucket.org/hascode/social-comments-plugin/issue/10/include-the-content-of-the-comment-in-the}#10 Include the content of the comment in the email notification}}
